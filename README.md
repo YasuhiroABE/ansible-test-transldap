@@ -20,7 +20,19 @@ This module configures the server2 openldap servers as like as follows:
 * Unified directory: ou=proxy,dc=example,dc=com
     * ou=people,ou=proxy,dc=example,dc=com
     * ou=group,ou=proxy,dc=example,dc=com
-  
+
+After setting up this role, you can test the translucent functionality using such as the following file:
+
+    dn: uid=user01,ou=people,dc=example,dc=com
+    objectClass: inetOrgPerson
+    roomNumber: Num.101
+
+You can execute this file by the following commandline:
+
+    $ ldapadd -x -D cn=admin,dc=example,dc=com -W -f filename.ldif
+
+Note: The "dn:" entry must exist on the remote (parent) LDAP server.
+
 Requirements
 ------------
 
