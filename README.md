@@ -52,7 +52,7 @@ Example Playbook
         transldap_cn_admin_dnprefix: "cn=admin"
         transldap_cn_admin_password: "transpasswd"
         transldap_add_translucent_dburi: "ldap://translucent.example.com:389/"
-		transldap_add_translucent_local_attributes: "jpegPhoto,roomNumber,telephoneNumber"
+        transldap_add_translucent_local_attributes: "jpegPhoto,roomNumber,telephoneNumber"
       roles:
          - YasuhiroABE.test-transldap
 
