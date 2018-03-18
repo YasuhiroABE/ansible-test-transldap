@@ -1,0 +1,5 @@
+dn: olcOverlay=translucent,olcDatabase={{ "{" }}{{ transldap_add_translucent_local_mdbindex }}{{ "}" }}mdb,cn=config
+objectClass: olcOverlayConfig
+objectClass: olcTranslucentConfig
+olcOverlay: translucent
+olcTranslucentLocal: {{ transldap_add_translucent_local_attributes }}

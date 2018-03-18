@@ -1,0 +1,25 @@
+galaxy_info:
+  author: Yasuhiro ABE
+  description: Setup the openvpn package on Debian and Ubuntu.
+
+  license: Apache
+
+  min_ansible_version: 2.4
+
+  license: license (GPLv2, CC-BY, etc)
+
+  #github_branch:
+
+  #
+  # platforms is a list of platforms, and each platform has a name and a list of versions.
+  #
+  platforms:
+  - name: Ubuntu
+    versions:
+      - xenial
+
+  galaxy_tags:
+    - Network
+    - LDAP
+
+dependencies: []

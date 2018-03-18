@@ -1,0 +1,13 @@
+dn: cn=module{0},cn=config
+changetype: modify
+add: olcModuleLoad
+olcModuleLoad: back_ldap
+-
+add: olcModuleLoad
+olcModuleLoad: translucent
+-
+add: olcModuleLoad
+olcModuleLoad: ppolicy
+-
+add: olcModuleLoad
+olcModuleLoad: pcache

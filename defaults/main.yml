@@ -1,0 +1,48 @@
+---
+# defaults file for ansible-test-transldap
+
+transldap_init: true
+transldap_removal_filepath:
+  - '/etc/ldap/slapd.d/cn=config/olcDatabase={1}mdb.ldif'
+  - '/etc/ldap/slapd.d/cn=config/olcDatabase={1}mdb'
+  - '/var/lib/ldap/data.mdb'
+  - '/var/lib/ldap/lock.mdb'
+  - "{{ transldap_basedn_dbdirectory }}"
+  
+transldap_add_dirinfo:
+  - { path: "{{ transldap_basedn_dbdirectory }}", owner: 'openldap', group: 'openldap', mode: '0750' }
+
+transldap_additional_schema:
+  - ppolicy
+
+transldap_ldapadd_cn_config_files:
+  - transldap_add_modules.ldif
+  - transldap_create_backenddb.ldif
+  - transldap_add_translucent_local.ldif
+  - transldap_add_translucent_overlayserver.ldif
+
+transldap_ldapadd_backenddb_files: []
+
+transldap_copy_ldif_files:
+  - transldap_add_modules.ldif
+  - transldap_create_backenddb.ldif
+  - transldap_add_translucent_local.ldif
+  - transldap_add_translucent_overlayserver.ldif
+
+transldap_copy_ldif_perms:
+  owner: root
+  group: root
+  mode: '0600'
+  
+transldap_basedn: "dc=example,dc=com"
+transldap_cn_admin_dnprefix: "cn=admin"
+transldap_cn_admin_password: "transpasswd"
+transldap_basedn_dbdirectory: "/var/lib/ldap/transldap"
+
+## using in transldap_add_translucent_local.ldif.j2
+##      and transldap_add_translucent_overlayserver.ldif.j2
+transldap_add_translucent_local_mdbindex: 1
+transldap_add_translucent_local_attributes: "jpegPhoto,roomNumber,telephoneNumber"
+## using in transldap_add_translucent_overlayserver.ldif.j2
+transldap_add_translucent_dnindex: 0
+transldap_add_translucent_dburi: "ldap://localhost:389/"

@@ -1,0 +1,5 @@
+dn: olcDatabase=ldap,olcOverlay={{ "{" }}{{ transldap_add_translucent_dnindex }}{{ "}" }}translucent,olcDatabase={{ "{" }}{{ transldap_add_translucent_local_mdbindex }}{{ "}" }}mdb,cn=config
+objectClass: olcLDAPConfig
+objectClass: olcTranslucentDatabase
+olcDatabase: ldap
+olcDbURI: {{ transldap_add_translucent_dburi }}
