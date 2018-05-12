@@ -1,7 +1,7 @@
 YasuhiroABE.test-transldap
 ==========================
 
-A example openldap server configuration for the translucent module.
+An example openldap server configuration for the translucent module.
 
 This module configures the server2 openldap servers as like as follows:
 
